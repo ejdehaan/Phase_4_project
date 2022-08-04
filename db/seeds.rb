@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
+Post.create!(title: 'Rainbow Springs Private Island House', image: 'https://media.vrbo.com/lodging/26000000/25180000/25175400/25175388/2e5f2060.f10.jpg', link: 'https://www.vrbo.com/480385', category: 'Venue')
+
+
