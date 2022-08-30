@@ -5,6 +5,15 @@ class PostsController < ApplicationController
         render json: posts
     end
 
+    def show
+      post = Post.find_by(id: params[:id])
+      if post
+        render json: post
+      else
+        render json: { error: "post not found" }, status: :not_found
+      end
+    end
+
     def create
         post = Post.create(post_params)
         render json: post, status: :created
@@ -25,7 +34,7 @@ class PostsController < ApplicationController
       private
       
       def post_params
-        params.permit(:title, :image, :link, :category)
+        params.permit(:title, :image, :link, :category, :user_id)
       end
 
 end

@@ -1,26 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Header({ user, onLogout }) {
+
+  const history = useHistory()
   
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
     }).then(() => onLogout());
+    history.push("/login")
   }
   
   return (
     <div>
-      <div className="header">
-          <h1>We're Getting Married!</h1>
-      </div>
       {user ? (
-        <div>
-          <p>Welcome, {user.username}!</p>
-          <button onClick={handleLogout}>Logout</button>
+        <div className="header">
+          <h5>Welcome, {user.username}!</h5>
+          <button className="box3" onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <Link to="/login">Click Here to Login</Link>
+        <Link to="/login">
+          <button className="box3">Login</button>
+        </Link>
       )}
+      <br></br>
+
+
     </div>
   )
 }

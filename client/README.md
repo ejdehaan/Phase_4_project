@@ -11,6 +11,7 @@
     ├── Home
     ├── NavBar
     ├── AddInspiration
+    ├── EditInspiration
     └──Categories
         └── Category Item
 

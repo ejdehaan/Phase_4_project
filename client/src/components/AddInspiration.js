@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Categories from './Categories';
 
 
-function AddInspiration(  ) {
+function AddInspiration( { user, handleAddInspo, inspo, handleGrabInspoId } ) {
 
-    const [inspo, setInspo] = useState([])
-
+ 
 
     const [formData, setFormData] = useState({
         title: "",
@@ -15,12 +14,13 @@ function AddInspiration(  ) {
     })
 
 
+
     function handleChange(e) {
         const { name, value } = e.target;
         setFormData((prevData) => ({...prevData, [name]: value}))
     }
 
-
+    
     function handleSubmit(e) {
         e.preventDefault()
         fetch("/posts",{
@@ -28,7 +28,7 @@ function AddInspiration(  ) {
             headers:{
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify({...formData, user_id: user.id}),
         }) 
         .then(resp => resp.json())
         .then(newInspo => handleAddInspo(newInspo));
@@ -40,20 +40,11 @@ function AddInspiration(  ) {
         });
     }
 
-
-    function fetchInspo() {
-        fetch("/posts")
-        .then(resp => resp.json())
-        .then(data => setInspo(data))
-    }
-
-    useEffect(() => {
-        fetchInspo();
-    }, []);
-
-
-    function handleAddInspo(newInspo) {
-        setInspo([...inspo, newInspo])
+    const onDeleteInspo = (id) => {
+        const updatedInspo = inspo.filter(
+          (inspo) => inspo.id !== id
+        )
+        handleAddInspo(updatedInspo)
     }
 
  
@@ -113,11 +104,11 @@ function AddInspiration(  ) {
 
                         <br></br>
                         <br></br>
-                    <button type="submit">Add Idea!</button>
+                    <button className='box' type="submit">Add Idea!</button>
                 </form>
                 <br/>
             </div>
-            <Categories inspo={inspo}/>
+            <Categories onDeleteInspo={onDeleteInspo} inspo={inspo} handleGrabInspoId={handleGrabInspoId}/>
         </div>
     )
 }

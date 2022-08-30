@@ -1,29 +1,38 @@
+
+
+
 body {
+  font-family: 'Merienda', cursive;
   margin: 10;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', */
+    /* monospace; */
+    font-family: 'Merienda', cursive;
+} 
+
+
+.header {
+  margin-left: 100;
+}
+
+
+.App {
   background: linear-gradient(0deg, rgba(129,6,106,1) 29%, rgba(207,164,184,1) 68%);
   background-attachment: fixed;
 }
 
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} 
-
-
-.header {
-  padding: 5px;
-  border: 2px solid palevioletred;
+.greeting {
+  /* padding: 5px; */
+  /* border: 2px solid palevioletred; */
   text-align: center;
-  width: 400px;
+  width: 80%;
   margin:auto;
   border-radius: 100px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 35px;
 }
 
 
@@ -32,7 +41,6 @@ code {
   border: 2px solid palevioletred;
   width: 300px;
   margin:auto;
-
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
@@ -45,6 +53,7 @@ code {
   flex-grow: 1;
   border: 3px solid rgba(0,0,0,.2);
   border-radius: 100px;
+  font-family: 'Merienda', cursive;
 }
 
 
@@ -52,25 +61,59 @@ code {
   flex-grow: 2;
   border: 3px solid rgba(0,0,0,.2);
   border-radius: 100px;
+  font-family: 'Merienda', cursive;
 }
 
 .box3 {
   flex-grow: 2;
   border: 3px solid rgba(0,0,0,.2);
   border-radius: 100px;
+  font-family: 'Merienda', cursive;
 }
 
 .button {
+  flex-grow: 2;
+  border: 3px solid rgba(0,0,0,.2);
   border-radius: 100px;
+  font-family: 'Merienda', cursive;
 }
 
 
 .form {
   padding: 20px;
   border: 2px solid palevioletred;
-  width: 240px;
+  width: 280px;
   margin: 10px auto;
   text-align: right;
+}
+
+.user_acct_form {
+  padding: 5px;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  display: block;
+  flex-direction: column;
+  background-color: rgba(216, 112, 147, 0.4);
+  border-radius: 4px;
+}
+
+.app_name {
+  text-align: center;
+}
+
+
+/* .signup {
+  width: 100%;
+  background-color: rgba(216, 112, 147, 0.6);
+} */
+
+.no-user {
+  background-image: url("https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8d2VkZGluZyUyMHJpbmd8ZW58MHx8MHx8&w=1000&q=80");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .form-header{
@@ -83,8 +126,17 @@ code {
   width: 160px;
   margin: 10px auto;
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/* ORIGINAL SIZES with =>> width="450" height="400" in CategoryItem img src */
+/* .category-item {
+  padding: 10px;
+  border: 2px solid palevioletred;
+  width: 500px;
+  margin: 10px auto;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} */
 
 .category-item {
   padding: 10px;
@@ -92,8 +144,13 @@ code {
   width: 500px;
   margin: 10px auto;
   text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.cat-item-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 
 
 .image {
@@ -111,15 +168,20 @@ code {
     text-align: center;
 }
 
-.names {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+.contact_form {
+  padding: 20px;
+  border: 2px solid palevioletred;
+  width: 340px;
+  margin: 10px auto;
+  text-align: left;
 }
 
-.about {
-  padding: 10px;
-  border: 2px solid palevioletred;
-  width: 560px;
-  margin: 10px auto;
-  text-align: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* .link {
+  text-align: left   
+} */
+
+.height {
+  height: 100vh;
 }
+
